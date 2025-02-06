@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func quickSort2(arr []int) []int {
-	if len(arr) < 2 {
+	if len(arr) <= 1 {
 		return arr
 	}
 	left, right := 0, len(arr)-1
