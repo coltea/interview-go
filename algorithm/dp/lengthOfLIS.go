@@ -6,6 +6,14 @@ import (
 )
 
 func lengthOfLIS(nums []int) int {
+
+	max := func(a, b int) int {
+		if a > b {
+			return a
+		}
+		return b
+	}
+
 	if len(nums) == 0 {
 		return 0
 	}
@@ -31,14 +39,14 @@ func lengthOfLIS(nums []int) int {
 	return maxLen
 }
 
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
-
 func main() {
-	nums := []int{10, 1, 2, 5, 3, 7, 101, 18}
-	fmt.Println("长度为:", lengthOfLIS(nums)) // 输出: 4
+	nums := []int{1, 3, 5, 4, 7}
+	fmt.Println("最长连续递增子序列长度:", lengthOfLIS(nums)) // 输出: 3
+
+	nums = []int{2, 2, 2, 2, 2}
+	fmt.Println("最长连续递增子序列长度:", lengthOfLIS(nums)) // 输出: 1
+
+	nums = []int{10, 9, 2, 5, 3, 7, 101, 18}
+	fmt.Println("最长连续递增子序列长度:", lengthOfLIS(nums)) // 输出: 1
+
 }

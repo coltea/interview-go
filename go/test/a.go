@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	a := "1234"
-	fmt.Println(a[1:3:-1])
-
+	a := 'a'
+	a++
+	fmt.Println(string(a))
 }

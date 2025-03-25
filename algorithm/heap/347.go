@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func topKFrequent(nums []int, k int) []int {
-
+	return make([]int, 0)
 }
 
 func main() {
