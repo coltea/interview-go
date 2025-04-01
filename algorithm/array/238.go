@@ -10,18 +10,24 @@ func main() {
 	// fmt.Println(productExceptSelf(nums)) // [0,0,9,0,0]
 }
 
+// productExceptSelf 计算除自身以外的所有元素乘积
+// 使用前缀积和后缀积的方法，空间复杂度 O(1)
 func productExceptSelf(nums []int) []int {
 	n := len(nums)
 	output := make([]int, n)
+
+	// 计算左侧所有数字的乘积
 	output[0] = 1
 	for i := 1; i < n; i++ {
 		output[i] = nums[i-1] * output[i-1]
 	}
-	fmt.Println(output)
-	right := 1
+
+	// 计算右侧所有数字的乘积并更新结果
+	rightProduct := 1
 	for i := n - 1; i >= 0; i-- {
-		output[i] *= right
-		right *= nums[i]
+		output[i] *= rightProduct
+		rightProduct *= nums[i]
 	}
+
 	return output
 }
