@@ -23,7 +23,7 @@ func mergeSort(arr []int) []int {
 }
 
 func merge(s1, s2 []int) []int {
-	res := make([]int, 0, len(s1)+len(s2))
+	res := make([]int, len(s1)+len(s2))
 	l, r := 0, 0
 	for l < len(s1) && r < len(s2) {
 		if s1[l] < s2[r] {
